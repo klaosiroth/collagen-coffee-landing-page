@@ -10,9 +10,13 @@
   --color-background-body: #d0a06c;
   --color-background-hero: #d0a06c;
   --color-background-feature: #8F765E;
-  --color-background-shopee: #f53d2d;
+  --color-shopee: #f53d2d;
+  --color-lazada: #0F146D;
+  --color-facebook: #1877f2;
   --color-background-main: #622409;
-  --color-brand: #fa1779;
+  --color-primary: #CE0F69;
+  --color-secondary: #834B26;
+  --color-background: #9E652E;
 
   --color-white: #E8E9EA;
   --color-black: #110907;
@@ -28,10 +32,6 @@
   --theme-c: #8a3b18;
   --theme-d: #350901;
 
-}
-
-.text-brand {
-  color: var(--color-brand);
 }
 
 .bg-glass {
@@ -131,20 +131,26 @@ h6 {
   font-size: 1.125rem;
 }
 
+.color-primary {
+  color: var(--color-primary);
+}
+.color-secondary {
+  color: var(--color-secondary);
+}
+
 .main {
   background: var(--color-background-main);
 }
 
 .hero {
-  background: var(--color-background-hero);
+  // background: var(--color-background-hero);
 }
 
 .product {
-  background: var(--color-background-main);
+  // background: var(--color-background-main);
 
   .card {
     border-radius: calc(2rem - 1px);
-    background: linear-gradient(180deg,#f53d2d,#f63);
     background: linear-gradient(-180deg,#CA9665,#AD794C);
 
     .card-img-top {
@@ -169,14 +175,22 @@ h6 {
 }
 
 .feature {
-  background: var(--color-background-feature);
+  // background: var(--color-background-feature);
   // background: linear-gradient(90deg,#8F765E,#69523E);
-  background: linear-gradient(180deg, rgba(143, 118, 94, 1) 0%, rgba(105, 82, 62, 1) 60%)
+  // background: linear-gradient(180deg, rgba(143, 118, 94, 1) 0%, rgba(105, 82, 62, 1) 60%)
+}
+
+.bg-facebook {
+  background: var(--color-facebook);
 }
 
 .bg-shopee {
-  background: var(--color-background-shopee);
+  background: var(--color-shopee);
   background: linear-gradient(-180deg,#f53d2d,#f63);
+}
+
+.bg-lazada {
+  background: var(--color-lazada);
 }
 
 .button {
@@ -192,6 +206,9 @@ h6 {
   }
 
   &t-n {
+    &1 {
+      margin-top: -0.25rem;
+    }
     &3 {
       margin-top: -1rem;
     }
