@@ -25,6 +25,7 @@
   --theme-b: #a66644;
   --theme-c: #8a3b18;
   --theme-d: #350901;
+  --box-shadow: 0 4rem 5rem -3rem rgba(36,36,113,0.50);
 }
 
 .bg-glass {
@@ -211,5 +212,134 @@ img {
 
 .footer__copyright {
   font-size: 0.875rem;
+}
+
+.testimonial {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 63em) {
+  .testimonial {
+    flex-direction: column;
+  }
+}
+
+.testimonial__img {
+  flex: 0 1 48.65%;
+}
+
+@media screen and (max-width: 40em) {
+  .testimonial__img {
+    width: 80%;
+  }
+}
+
+.testimonial__photo {
+  width: 100%;
+  border-radius: 0.8rem;
+  box-shadow: var(--box-shadow);
+}
+
+.testimonial__text {
+  color: var(--color-black);
+  flex: 0 1 57.2%;
+  margin-right: -5.8%;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 63em) {
+  .testimonial__text {
+    flex: initial;
+    margin-right: 0;
+    margin-top: 6rem;
+    text-align: center;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .testimonial__text {
+    margin-top: 4rem;
+  }
+}
+
+.testimonial__quotation-marks {
+  position: absolute;
+  top: -3.5rem;
+  left: 6rem;
+}
+
+@media screen and (max-width: 63em) {
+  .testimonial__quotation-marks {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .testimonial__quotation-marks {
+    width: 4rem;
+    top: -2rem;
+  }
+}
+
+.testimonial__quote {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.375;
+}
+
+@media screen and (max-width: 75em) {
+  .testimonial__quote {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .testimonial__quote {
+    font-size: 1.125rem;
+  }
+}
+
+.testimonial__cite {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 75em) {
+  .testimonial__cite {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 63em) {
+  .testimonial__cite {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .testimonial__cite {
+    font-size: 0.875rem;
+  }
+}
+
+.testimonial__cite--name {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 75em) {
+  .testimonial__cite--name {
+    margin-right: 0;
+    display: block;
+  }
+}
+
+.testimonial__cite--role {
+  color: var(--color-primary);
 }
 /*# sourceMappingURL=main.css.map */

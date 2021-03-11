@@ -13,6 +13,7 @@
   <!-- Libs CSS -->
   <link rel="stylesheet" href="./assets/libs/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/libs/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <!-- Theme CSS -->
   <link rel="stylesheet" href="./assets/css/main.css">
   <!-- Title -->
@@ -176,7 +177,67 @@
           </div>
         </div>
       </section>
-      <section class="testimonial">
+
+      <section class="section-testimonials">
+        <!-- Swiper doc https://webcodeflow.com/responsive-testimonial-slider/ -->
+        <div class="swiper-container testimonials__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <figure class="testimonial slider__slide-content">
+                <blockquote class="testimonial__text">
+                  <img class="testimonial__quotation-marks" src="./assets/images/testimonial/pattern-quotes.svg" alt="quotation marks">
+                  <p class="testimonial__quote">
+                    “ I’ve been interested in coding for a while but never taken the jump, until now.
+                    I couldn’t recommend this course enough. I’m now in the job of my dreams and so
+                    excited about the future. ”
+                  </p>
+                  <cite class="testimonial__cite">
+                    <span class="testimonial__cite--name">Tanya Sinclair </span>
+                    <span class="testimonial__cite--role">UX Engineer</span>
+                  </cite>
+                </blockquote>
+                <div class="testimonial__img">
+                  <img class="testimonial__photo" src="./assets/images/testimonial/image-tanya.jpg" alt="Tanya Sinclair">
+                </div>
+              </figure>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+
+      <style>
+        /* .swiper-container {
+          width: 100%;
+          height: 100%;
+        }
+
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+
+           Center slide text vertically 
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        } */
+      </style>
+
+      <section class="section-testimonials">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center mb-4">
             <h2>รีวิว</h2>
@@ -224,6 +285,24 @@
       <div class="footer__copyright">&copy; 2021 P5 Group. All rights reserved.</div>
     </div>
   </footer>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.testimonials__slider', {
+      // autoplay: {
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // },
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
   <!-- Theme JS -->
   <script src="./assets/js/app.js"></script>
 </body>
