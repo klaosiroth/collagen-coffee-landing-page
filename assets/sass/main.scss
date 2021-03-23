@@ -1,90 +1,32 @@
 @charset "utf-8";
 
+$primary: hsl(333, 91%, 44%);
+$secondary: hsl(30, 41%, 25%);
+$neutral: hsl(51, 78%, 96%);
+$accent: hsl(87, 48%, 48%);
+$facebook: hsl(214, 89%, 52%);
+$shopee: #f53d2d;
+$lazada: #0F146D;
+
 :root {
-  --font-main: 'NotoSansThai', Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-stack: 'NotoSansThai', Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --font-size-base: 1rem;
+  --font-color-default: #593F25; // #fdfaed
+  --background-color-body: #fff;
   --line-height-body: 1.7;
-  // --color-text-main: #1d1d1f;
-  // --color-text-main: #110907;
-  --color-text-main: #593F25;
-  // --color-background-body: #f5f5f7;
-  --color-background-body: #fff;
-  --color-background-hero: #d0a06c;
-  --color-background-feature: #8F765E;
+
+  --color-primary: #D70A65; 
+  --color-secondary: #593F25;
+
   --color-shopee: #f53d2d;
   --color-lazada: #0F146D;
   --color-facebook: #1877f2;
-  --color-background-main: #622409;
-  --color-primary: #D70A65; // #CE0F69
-  --color-secondary: #593F25; // #834B26
-  --color-background: #9E652E;
-
-  --color-white: #E8E9EA;
-  --color-black: #110907;
-  --color-brown-1: #69523E;
-  --color-brown-2: #8F765E;
-
-  --color-brown: #532801;
-  --color-pink: #fa1779;
-  --theme-bg: #622409;
-  --theme-bb: #3e2c36;
-  --theme-a: #d0a06c;
-  --theme-b: #a66644;
-  --theme-c: #8a3b18;
-  --theme-d: #350901;
 
   --box-shadow: 0 4rem 5rem -3rem rgba(36,36,113,0.50);
   --rounded: 0.75rem;
 }
 
-/*
- * Default Media Queries Screen
- * Based on purecss.io
- */
-
-
-/* Small Sreen / ≥ 568px */
-// @media screen and (max-width: 35.5em) {
-    
-// }
-
-// /* Medium Sreen / ≥ 768px */
-// @media screen and (min-width: 48em) {
-    
-// }
-
-// /* Large Sreen / ≥ 1024px */
-// @media screen and (min-width: 64em) {
-    
-// }
-
-// /* Extra Large Sreen / ≥ 1280px */
-// @media screen and (min-width: 80em) {
-    
-// }
-
-.bg-glass {
-  // backdrop-filter: blur(40px) saturate(120%) brightness(120%);
-  // border-radius: 20px;
-  // background: rgba(255, 255, 255, 0.6);
-  // box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px inset;
-  backdrop-filter: saturate(180%) blur(20px);
-  background-color: rgba(255,255,255,0.72);
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 100%;
-}
-
-/* Fonts
---------------------------------------------- */
+// Fonts
 @font-face{
   font-family:'NotoSansThai';
   src: url('../../assets/fonts/NotoSansThai/NotoSansThai-Regular.ttf');
@@ -99,30 +41,20 @@ html {
   font-display: swap;
 }
 
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  background-color: transparent;
-}
-
-a:hover {
-  color: #D70A33;
-  text-decoration: underline
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
+// Base
 body {
-  font-family: var(--font-main);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-body);
-  color: var(--color-text-main);
-  background-color: var(--color-background-body); // Fallback for when there is no custom background color defined.
+  font-family: var(--font-stack);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--font-color-default);
+  background-color: var(--background-color-body); // Fallback for when there is no custom background color defined.
+  // background-image: url(/assets/images/bg-image-top.jpg);
+  // background-position: 50% 0%;
+  // background-repeat: no-repeat;
+  // background-size: 100% auto;
 }
 
+// Typography
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -175,14 +107,37 @@ h6 {
   font-size: 1.125rem;
 }
 
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: lighten($primary, 15);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 .section-header {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .main {
+  // background-image: url(/assets/images/bg-image-bottom.jpg);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
   section:not(.section-) {
-    padding-bottom: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
 
@@ -192,10 +147,6 @@ h6 {
       border-radius: var(--rounded);
     }
    }
-}
-
-.section-feature {
-  
 }
 
 .feature {
@@ -244,7 +195,8 @@ h6 {
   }
 }
 
-.section-product {
+.product {
+  background: $neutral;
 
   .card {
     border: none;
@@ -393,8 +345,13 @@ h6 {
 .footer {
 
   &__top {
-    background-color: #f8f1e7;
     padding: 40px 0px;
+    background-color: #f8f1e7;
+    background-image: url(/assets/images/bg-image-need-help.jpg);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }
 
   &__bottom {

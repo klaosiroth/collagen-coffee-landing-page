@@ -1,58 +1,18 @@
-@charset "UTF-8";
 :root {
-  --font-main: 'NotoSansThai', Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-stack: 'NotoSansThai', Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --font-size-base: 1rem;
+  --font-color-default: #593F25;
+  --background-color-body: #fff;
   --line-height-body: 1.7;
-  --color-text-main: #593F25;
-  --color-background-body: #fff;
-  --color-background-hero: #d0a06c;
-  --color-background-feature: #8F765E;
+  --color-primary: #D70A65;
+  --color-secondary: #593F25;
   --color-shopee: #f53d2d;
   --color-lazada: #0F146D;
   --color-facebook: #1877f2;
-  --color-background-main: #622409;
-  --color-primary: #D70A65;
-  --color-secondary: #593F25;
-  --color-background: #9E652E;
-  --color-white: #E8E9EA;
-  --color-black: #110907;
-  --color-brown-1: #69523E;
-  --color-brown-2: #8F765E;
-  --color-brown: #532801;
-  --color-pink: #fa1779;
-  --theme-bg: #622409;
-  --theme-bb: #3e2c36;
-  --theme-a: #d0a06c;
-  --theme-b: #a66644;
-  --theme-c: #8a3b18;
-  --theme-d: #350901;
   --box-shadow: 0 4rem 5rem -3rem rgba(36,36,113,0.50);
   --rounded: 0.75rem;
 }
 
-/*
- * Default Media Queries Screen
- * Based on purecss.io
- */
-/* Small Sreen / ≥ 568px */
-.bg-glass {
-  backdrop-filter: saturate(180%) blur(20px);
-  background-color: rgba(255, 255, 255, 0.72);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 100%;
-}
-
-/* Fonts
---------------------------------------------- */
 @font-face {
   font-family: 'NotoSansThai';
   src: url("../../assets/fonts/NotoSansThai/NotoSansThai-Regular.ttf");
@@ -67,28 +27,12 @@ html {
   font-display: swap;
 }
 
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  background-color: transparent;
-}
-
-a:hover {
-  color: #D70A33;
-  text-decoration: underline;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
 body {
-  font-family: var(--font-main);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-body);
-  color: var(--color-text-main);
-  background-color: var(--color-background-body);
+  font-family: var(--font-stack);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--font-color-default);
+  background-color: var(--background-color-body);
 }
 
 h1, .h1,
@@ -140,13 +84,37 @@ h6 {
   font-size: 1.125rem;
 }
 
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #f6378d;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 .section-header {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+.main {
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
 .main section:not(.section-) {
-  padding-bottom: 40px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .section-hero .hero img {
@@ -189,18 +157,22 @@ h6 {
   justify-content: center;
 }
 
-.section-product .card {
+.product {
+  background: #fdfaed;
+}
+
+.product .card {
   border: none;
   border-radius: calc(0.75rem - 1px);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
-.section-product .card .card-img-top {
+.product .card .card-img-top {
   border-top-left-radius: calc(0.75rem - 1px);
   border-top-right-radius: calc(0.75rem - 1px);
 }
 
-.section-product .card .card-body .sale {
+.product .card .card-body .sale {
   color: var(--color-primary);
 }
 
@@ -347,8 +319,12 @@ h6 {
 }
 
 .footer__top {
-  background-color: #f8f1e7;
   padding: 40px 0px;
+  background-color: #f8f1e7;
+  background-image: url(/assets/images/bg-image-need-help.jpg);
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .footer__bottom {
