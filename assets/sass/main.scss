@@ -11,18 +11,19 @@ $lazada: #0F146D;
 :root {
   --font-stack: 'NotoSansThai', Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --font-size-base: 1rem;
-  --font-color-default: #593F25; // #fdfaed
+  --font-color-default: #fdfaed; // #593F25
   --background-color-body: #fff;
   --line-height-body: 1.7;
 
   --color-primary: #D70A65; 
   --color-secondary: #593F25;
+  --color-neutral: hsl(51, 78%, 96%);
 
   --color-shopee: #f53d2d;
   --color-lazada: #0F146D;
   --color-facebook: #1877f2;
 
-  --box-shadow: 0 4rem 5rem -3rem rgba(36,36,113,0.50);
+  --box-shadow: 0 4rem 5rem -3rem rgba(14, 7, 1, 0.75);
   --rounded: 0.75rem;
 }
 
@@ -48,10 +49,6 @@ body {
   line-height: 1.7;
   color: var(--font-color-default);
   background-color: var(--background-color-body); // Fallback for when there is no custom background color defined.
-  // background-image: url(/assets/images/bg-image-top.jpg);
-  // background-position: 50% 0%;
-  // background-repeat: no-repeat;
-  // background-size: 100% auto;
 }
 
 // Typography
@@ -107,6 +104,10 @@ h6 {
   font-size: 1.125rem;
 }
 
+.heading {
+  margin-bottom: 20px;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -120,33 +121,16 @@ a:hover {
 }
 
 img {
+  display: block;
   height: auto;
   max-width: 100%;
 }
 
-.section-header {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+.hero {
 
-.main {
-  // background-image: url(/assets/images/bg-image-bottom.jpg);
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-
-  section:not(.section-) {
-    padding-top: 24px;
-    padding-bottom: 24px;
+  img {
+    border-radius: var(--rounded);
   }
-}
-
-.section-hero {
-  .hero {
-    img {
-      border-radius: var(--rounded);
-    }
-   }
 }
 
 .feature {
@@ -162,7 +146,7 @@ img {
       color: var(--color-primary);
       
       span {
-        color: var(--color-secondary)
+        color: var(--color-neutral);
       }
     }
   }
@@ -173,6 +157,7 @@ img {
       display: flex;
       border: none;
       padding: 0.425rem 0;
+      background-color: transparent;
 
       i {
         background: #ed9abf;
@@ -196,9 +181,10 @@ img {
 }
 
 .product {
-  background: $neutral;
+  color: var(--color-secondary);
 
   .card {
+    
     border: none;
     border-radius: calc(0.75rem - 1px);
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
@@ -216,11 +202,11 @@ img {
   }
 }
 
-.section-testimonials {
+.testimonials {
 
   .testimonial {
-    padding: 4rem 2.5rem;
-  
+    padding: 0 2.5rem 4rem;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,23 +314,10 @@ img {
   }
 }
 
-.bg-facebook {
-  background: var(--color-facebook);
-}
-
-.bg-shopee {
-  background: var(--color-shopee);
-  background: linear-gradient(-180deg,#f53d2d,#f63);
-}
-
-.bg-lazada {
-  background: var(--color-lazada);
-}
-
-
 .footer {
 
   &__top {
+    color: var(--color-secondary);
     padding: 40px 0px;
     background-color: #f8f1e7;
     background-image: url(/assets/images/bg-image-need-help.jpg);
@@ -366,6 +339,120 @@ img {
   }
 }
 
+.bg-facebook {
+  background: var(--color-facebook);
+}
+
+.bg-shopee {
+  background: var(--color-shopee);
+  background: linear-gradient(-180deg,#f53d2d,#f63);
+}
+
+.bg-lazada {
+  background: var(--color-lazada);
+}
+
+.wave {
+  position: relative;
+  z-index: 1;
+
+  &__top {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: auto;
+  }
+
+  &__bottom {
+    position: absolute;
+    top: -1px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.section-top {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  background-color: #2e2926;
+  background-image: url(../images/bg-image-top.jpg);
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.section-middle {
+  position: relative;
+  background-color: var(--color-neutral);
+}
+
+.section-bottom {
+  position: relative;
+  background-color: #5f4230;
+  background-image: url(../images/bg-image-bottom.jpg);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.section-top {
+  padding-top: 24px;
+  
+
+  @media screen and (min-width: 64em) {
+    padding-top: 48px;
+    padding-bottom: 96px; 
+  }
+}
+
+.section-middle {
+  padding-top: 24px;
+  
+
+  @media screen and (min-width: 64em) {
+    padding-top: 48px;
+  }
+}
+
+.section-bottom {
+  padding-top: 64px;
+
+  @media screen and (min-width: 64em) {
+    padding-top: 140px;
+    
+  }
+}
+
+.section-space {
+  padding-bottom: 24px;
+
+  @media screen and (min-width: 64em) {
+    padding-bottom: 48px;
+  }
+}
+
 .rounded {
   border-radius: var(--rounded)!important;
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: 66.66%; /* 3:2 Aspect Ratio (divide 2 by 3 = 0.6666)  */ 
+  height: 0; 
+  overflow: hidden;
+  border-radius: 0.75rem;
+  margin-bottom: 24px;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
